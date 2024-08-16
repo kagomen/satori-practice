@@ -8,28 +8,17 @@ export async function GET(req) {
 
   return new ImageResponse(
     (
-      <div
-        style={{
-          fontSize: "64px",
-          fontWeight: "bold",
-          color: "darkGrey",
-          background: "white",
-          width: "100%", //SVGの内部コンテンツがImageResponse全体を埋めるように指定
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div tw="flex items-center justify-center w-full h-full bg-fuchsia-50 text-[100px] text-fuchsia-800">
         {text}
       </div>
     ),
     {
       width: 1600, // 生成されるSVG画像全体のサイズを指定
       height: 800,
-      headers: {
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-      },
+      revalidate: 0,
+      // headers: {
+      //   "Cache-Control": "no-store, max-age=0",
+      // },
     }
   );
 }

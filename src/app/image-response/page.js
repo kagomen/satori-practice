@@ -1,30 +1,40 @@
 "use client";
 
+import { Copy } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const inputRef = useRef(null);
-  const [text, setText] = useState("Hello from @vercel/og");
+  const [text, setText] = useState("Hello from ImageResponse 😻");
 
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
+  function CopyText() {
+    navigator.clipboard.writeText(
+      `![LGTM-image](https://satori-image-response-practice.vercel.app/api/og?text=${encodeURIComponent(
+        text
+      )})`
+    );
+    alert("Copied!");
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center gap-16 p-16">
-      <h1>ImageResponse practice</h1>
+    <main className="flex min-h-screen flex-col items-center gap-12 p-12 text-gray-700">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           setText(inputRef.current.value);
         }}
       >
+        <label className="block mb-1">👇 input here!</label>
         <input
           type="text"
           ref={inputRef}
           defaultValue={text}
-          className="w-[300px] mb-4 p-2 border border-gray-300"
+          className="w-[300px] p-2 border border-gray-300 rounded"
         />
       </form>
       <Image
@@ -33,6 +43,21 @@ export default function Home() {
         width={800}
         height={400}
       />
+      <div className="flex gap-2 justify-center items-center">
+        <input
+          type="text"
+          value={`![LGTM-image](https://satori-image-response-practice.vercel.app/api/og?text=${encodeURIComponent(
+            text
+          )})`}
+          className="w-[300px] p-2 border border-gray-300 rounded"
+        />
+        <button
+          className="hover:bg-fuchsia-50 rounded-lg p-2"
+          onClick={CopyText}
+        >
+          <Copy />
+        </button>
+      </div>
     </main>
   );
 }
