@@ -8,13 +8,13 @@ export async function GET(req) {
 
   return new ImageResponse(
     (
-      <div tw="flex items-center justify-center w-full h-full bg-fuchsia-50 text-[100px] text-fuchsia-800">
+      <div tw="flex items-center justify-center w-full h-full bg-fuchsia-50 text-[100px] text-fuchsia-800 font-bold">
         {text}
       </div>
     ),
     {
-      width: 1600, // 生成されるSVG画像全体のサイズを指定
-      height: 800,
+      width: 1200, // 生成されるSVG画像全体のサイズを指定
+      height: 720,
       revalidate: 0,
       // headers: {
       //   "Cache-Control": "no-store, max-age=0",
