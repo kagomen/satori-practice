@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const inputRef = useRef(null);
-  const [text, setText] = useState("LGTM 😻");
+  const [text, setText] = useState("🧑‍🔧LGTM Factory🛠️");
   const copyText = `![LGTM-image](https://satori-image-response-practice.vercel.app/api/og?text=${encodeURIComponent(
     text
   )})`;
@@ -15,7 +15,7 @@ export default function Home() {
     inputRef.current.focus();
   }, []);
 
-  function CopyText() {
+  function copy() {
     navigator.clipboard.writeText(copyText);
     alert("Copied!");
   }
@@ -48,10 +48,7 @@ export default function Home() {
           value={copyText}
           className="w-[300px] p-2 border border-gray-300 rounded"
         />
-        <button
-          className="hover:bg-fuchsia-50 rounded-lg p-2"
-          onClick={CopyText}
-        >
+        <button className="hover:bg-fuchsia-50 rounded-lg p-2" onClick={copy}>
           <Copy />
         </button>
       </div>
