@@ -8,14 +8,15 @@ export async function GET(req) {
 
   // フォント指定について: https://vercel.com/guides/using-custom-font
   const fontData = await fetch(
-    new URL("../../../../assets/typewr__.ttf", import.meta.url)
+    new URL("../../../../assets/Micro5Charted-Regular.ttf", import.meta.url),
+    { cache: "no-cache" }
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     (
       <div
-        style={{ fontFamily: "Typewriter" }}
-        tw="flex items-center justify-center w-full h-full bg-fuchsia-50 text-[80px] text-fuchsia-800 rounded-3xl"
+        style={{ fontFamily: "Micro5Charted-Regular" }}
+        tw="flex items-center justify-center w-full h-full bg-fuchsia-50 text-[80px] text-green-800 rounded-3xl"
       >
         {text}
       </div>
@@ -31,9 +32,8 @@ export async function GET(req) {
       emoji: "noto",
       fonts: [
         {
-          name: "Typewriter",
+          name: "Micro5Charted-Regular",
           data: fontData,
-          style: "normal",
         },
       ],
     }

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const inputRef = useRef(null);
-  const [text, setText] = useState("🧑‍🔧LGTM Factory🛠️");
+  const [text, setText] = useState("😻 LGTM Factory 🐙");
   const copyText = `![LGTM-image](https://satori-image-response-practice.vercel.app/api/og?text=${encodeURIComponent(
     text
   )})`;
