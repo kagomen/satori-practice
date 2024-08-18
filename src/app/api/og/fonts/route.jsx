@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
+// こちらがとても参考になった: https://trpfrog.net/blog/google-fonts-on-satori
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const text = searchParams.get("text");
@@ -22,7 +23,7 @@ export async function GET(req) {
 
   return new ImageResponse(
     (
-      <div tw="flex items-center justify-center w-full font-bold h-full bg-indigo-50 text-[80px] text-indigo-800 rounded-3xl border-2 border-indigo-800">
+      <div tw="flex items-center justify-center w-full font-bold h-full bg-indigo-50 text-[64px] text-indigo-800 rounded-3xl border-2 border-indigo-800">
         {text}
       </div>
     ),

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const inputRef = useRef(null);
-  const [text, setText] = useState("😎 Look Good To Me! ☕️");
+  const [text, setText] = useState("🏄 Looks Good To Me! 🤟");
   const url = `/api/og/fonts?text=${encodeURIComponent(text)}`;
   const copyText = `![LGTM-image](https://satori-image-response-practice.vercel.app${url})`;
 
