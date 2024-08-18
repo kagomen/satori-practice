@@ -18,7 +18,7 @@ export async function GET(req) {
   return new ImageResponse(
     (
       <div
-        style={{ fontFamily: "Micro5Charted-Regular" }}
+        // style={{ fontFamily: "Micro5Charted-Regular" }} // なくても機能するので、要らないかも?
         tw="flex items-center justify-center w-full h-full bg-fuchsia-50 text-[80px] text-green-800 rounded-3xl"
       >
         {text}
