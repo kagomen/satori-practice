@@ -8,7 +8,7 @@ export default function Home() {
   const inputRef = useRef(null);
   const [text, setText] = useState("😻 LGTM Factory 🐙");
   const url = `/api/og?text=${encodeURIComponent(text)}`;
-  const copyText = `![LGTM-image](https://satori-image-response-practice.vercel.app${url})`;
+  const copyText = `![LGTM-image](https://satori-practice.vercel.app${url})`;
 
   useEffect(() => {
     inputRef.current.focus();
